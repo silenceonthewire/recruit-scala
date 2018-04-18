@@ -61,7 +61,7 @@ class HomeController @Inject()(cc: ControllerComponents, configuration: Configur
     nodes
   }
 
-  def getExcelData(filename: String) = {
+  def getExcelData(filename: String): util.ArrayList[ExcelData] = {
     val workbook = WorkbookFactory.create(new File(filename))
     val sheet = workbook.getSheetAt(0);
     val excelDataSet = new util.ArrayList[ExcelData]();
